@@ -12,7 +12,7 @@ public interface IItemService {
     void AddItem();
 }
 public class ItemService : IItemService {
-    public ObservableCollection<string> Items { get; set;} =new ();
+    public ObservableCollection<string> Items { get; set;} =new();
 
     public void AddItem() {
        Items.Add("Item");

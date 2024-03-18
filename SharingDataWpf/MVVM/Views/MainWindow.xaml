@@ -12,10 +12,13 @@
 
         <StackPanel>
             <Button Width="100"
-                    Height="25" Command="{Binding OpenSettingWindowCommand}"
+                    Height="25"
+                    Command="{Binding OpenSettingWindowCommand}"
                     Content="Setting"/>
-            <ListView ItemsSource="{Binding  ItemService.Item}">
-                
+            <ListView ItemsSource="{Binding ItemService.Items}"
+           Height="150"
+           Width="100">
+
             </ListView>
         </StackPanel>
         

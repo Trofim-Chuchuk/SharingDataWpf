@@ -13,7 +13,7 @@ namespace SharingDataWpf.MVVM.ViewModels
         public RelayCommands AddItemCommand {  get; set; } 
         public SettingViewModel(IItemService itemsService) { 
             ItemService= itemsService;
-            AddItemCommand = new RelayCommands(o => { ItemService.AddItem(); }, o => true);
+            AddItemCommand = new RelayCommands(o => { ItemService.AddItem(); });
         }
     }
 }

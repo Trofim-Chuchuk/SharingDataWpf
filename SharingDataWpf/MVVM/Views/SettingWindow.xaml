@@ -8,6 +8,16 @@
         Title="SettingWindow" Height="450" Width="800">
     
     <Grid>
-        <Button Content="AddItem"  Command="{Binding AddItemCommand}"/>
+        <StackPanel>
+            <Button Content="AddItem" 
+                    Command="{Binding AddItemCommand}"        
+                    Width="100 "
+                    Height="25"/>
+            <ListView ItemsSource="{Binding ItemService.Items}"
+                      Height="150"
+                      Width="100">
+
+            </ListView>
+        </StackPanel>
     </Grid>
 </Window>
