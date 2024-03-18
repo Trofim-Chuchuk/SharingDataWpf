@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace SharingDataWpf.Core {
-    internal class RelayCommands:ICommand {
+    public class RelayCommands:ICommand {
         private readonly Action<object> _Execute;
         private readonly Func<object, bool> _CanExecute;
 
@@ -20,10 +20,10 @@ namespace SharingDataWpf.Core {
             remove => CommandManager.RequerySuggested -= value;
         }
 
-        public  bool CanExecute(object parameter) => _CanExecute?.Invoke(parameter) ?? true;
+        public  bool CanExecute(object parameter) => _CanExecute==null || _CanExecute(parameter);
 
         public  void Execute(object parameter) {
-           _CanExecute?.Invoke(parameter);
+           _Execute?.Invoke(parameter);
         }
 
     }
